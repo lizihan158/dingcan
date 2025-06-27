@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDFB">
+
+    <!-- 顶部收货地址大卡片 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="7dp"
+        app:cardBackgroundColor="#fff"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                app:tint="@color/yellow_meituan"
+                android:layout_marginEnd="10dp" />
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="请输入收货地址"
+                android:textColor="#363636"
+                android:textSize="15sp"
+                android:maxLines="2"
+                android:background="@null"
+                android:layout_weight="1"
+                android:inputType="textPostalAddress"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- 清单 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOrderGoods"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@id/cardAddress"
+        app:layout_constraintBottom_toTopOf="@id/orderBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_cart_product" />
+
+    <!-- 底部结算栏 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 小计和配送费：左边竖着放 -->
+            <LinearLayout
+                android:id="@+id/llLeftPrice"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/tvOrderSum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小计￥0"
+                    android:textColor="#222"
+                    android:textStyle="bold"
+                    android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/tvDeliverFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="配送费￥0"
+                    android:textColor="#888888"
+                    android:textSize="13sp"
+                    android:paddingTop="2dp"/>
+            </LinearLayout>
+
+            <!-- 总价：高亮，紧随其后 -->
+            <TextView
+                android:id="@+id/tvOrderTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单总价￥0"
+                android:textColor="@color/yellow_meituan"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/llLeftPrice"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <Button
+                android:id="@+id/btnPay"
+                android:layout_width="120dp"
+                android:layout_height="45dp"
+                android:text="去支付"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:backgroundTint="@color/yellow_meituan"
+                android:textColor="#fff"
+                android:layout_marginEnd="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

@@ -1,0 +1,22 @@
+<resources>
+    <color name="meituan_primary">#FFD600</color> <!-- 美团主色黄色 -->
+    <color name="meituan_secondary">#FFFCDF</color>
+    <color name="meituan_accent">#FF9300</color>
+    <color name="meituan_button">#FFD600</color>
+    <color name="meituan_title">#333333</color>
+    <color name="meituan_bg">#FFFDE7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#555555</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="cart_bg">#F6F6F6</color>
+    <color name="yellow_meituan">#FFD600</color>
+    <color name="card_bg">#FFFDFB</color>
+    <color name="gray_dark">#757575</color>
+    <color name="orange_menu_text">#F27C0E</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+
+</resources>
